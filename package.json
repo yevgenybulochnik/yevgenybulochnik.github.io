@@ -1,5 +1,5 @@
 {
-  "name": "react-static-example-typescript",
+  "name": "yevgenybulochnik.github.io",
   "private": true,
   "scripts": {
     "start": "react-static start",
@@ -15,6 +15,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-static": "^7.2.0",
+    "react-static-plugin-mdx": "^7.2.2",
     "react-static-plugin-reach-router": "^7.2.0",
     "react-static-plugin-sitemap": "^7.2.0",
     "react-static-plugin-source-filesystem": "^7.2.0",

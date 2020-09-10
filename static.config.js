@@ -5,6 +5,9 @@ import path from 'path'
 // Typescript support in static.config.js is not yet supported, but is coming in a future update!
 
 export default {
+  devServer: {
+    host: '0.0.0.0',
+  },
   entry: path.join(__dirname, 'src', 'index.tsx'),
   getRoutes: async () => {
     const { data: posts } /* :{ data: Post[] } */ = await axios.get(
@@ -28,6 +31,7 @@ export default {
   },
   plugins: [
     'react-static-plugin-typescript',
+    'react-static-plugin-mdx',
     [
       require.resolve('react-static-plugin-source-filesystem'),
       {

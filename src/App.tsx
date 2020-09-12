@@ -1,31 +1,38 @@
 import React from 'react'
 import { Root, Routes, addPrefetchExcludes } from 'react-static'
-import { Link, Router } from '@reach/router'
-import FancyDiv from 'components/FancyDiv'
-import Dynamic from 'containers/Dynamic'
-import './app.css'
+import { Router } from '@reach/router'
+import { FocusStyleManager } from '@blueprintjs/core'
+import Nav from './components/nav'
+
+import './app.scss'
+import "normalize.css"
+import "@blueprintjs/core/lib/css/blueprint.css"
+import "@blueprintjs/icons/lib/css/blueprint-icons.css"
+import "highlight.js//styles/atom-one-light.css"
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
 addPrefetchExcludes(['dynamic'])
 
+FocusStyleManager.onlyShowFocusOnTabs()
+
 function App() {
   return (
     <Root>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/blog">Blog</Link>
-        <Link to="/dynamic">Dynamic</Link>
-      </nav>
+      <Nav
+        branding="Yevgeny Bulochnik"
+        config={[
+          {to: '/', name: 'Home', icon: 'home'},
+          {to: '/about', name: 'about', icon: 'person'},
+          {to: '/articles', name: 'Articles', icon: 'applications'},
+          {to: '/projects', name: 'Projects', icon: 'application'},
+        ]}
+      />
       <div className="content">
-        <FancyDiv>
-          <React.Suspense fallback={<em>Loading...</em>}>
-            <Router>
-              <Dynamic path="dynamic" />
-              <Routes path="*" />
-            </Router>
-          </React.Suspense>
-        </FancyDiv>
+        <React.Suspense fallback={<em>Loading...</em>}>
+          <Router>
+            <Routes path="*" />
+          </Router>
+        </React.Suspense>
       </div>
     </Root>
   )

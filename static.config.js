@@ -1,8 +1,14 @@
-import axios from 'axios'
+import jdown from 'jdown'
+import chokidar from 'chokidar'
+import { rebuildRoutes } from 'react-static/node'
 import path from 'path'
+import hljs from 'highlight.js'
 // import { Post } from './types'
 
 // Typescript support in static.config.js is not yet supported, but is coming in a future update!
+
+let areRoutesBuilt = false
+chokidar.watch('src/content').on('all', () => areRoutesBuilt && rebuildRoutes())
 
 export default {
   devServer: {
@@ -10,22 +16,43 @@ export default {
   },
   entry: path.join(__dirname, 'src', 'index.tsx'),
   getRoutes: async () => {
-    const { data: posts } /* :{ data: Post[] } */ = await axios.get(
-      'https://jsonplaceholder.typicode.com/posts'
-    )
+    areRoutesBuilt = true
+    const props = await jdown('src/content', {
+      markdown: {
+        highlight: (code) => {
+          return hljs.highlightAuto(code).value
+        }
+      }
+    })
+    let { articles, projects } = props
     return [
       {
-        path: '/blog',
+        path: '/articles',
+        template: 'src/pages/articles.tsx',
         getData: () => ({
-          posts,
+          articles
         }),
-        children: posts.map((post /* : Post */) => ({
-          path: `/post/${post.id}`,
-          template: 'src/containers/Post',
+        children: articles.map(article => ({
+          path: `/${article.slug}`,
+          template: 'src/containers/Article',
           getData: () => ({
-            post,
-          }),
-        })),
+            article,
+          })
+        }))
+      },
+      {
+        path: '/projects',
+        template: 'src/pages/projects.tsx',
+        getData: () => ({
+          projects,
+        }),
+        children: projects.map(project => ({
+          path: `/${project.slug}`,
+          template: 'src/containers/Project',
+          getData: () => ({
+            project,
+          })
+        }))
       },
     ]
   },

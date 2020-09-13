@@ -14,6 +14,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 export default {
+  siteRoot: 'https://yevgenybulochnik.github.io',
   devServer: {
     host: '0.0.0.0',
   },

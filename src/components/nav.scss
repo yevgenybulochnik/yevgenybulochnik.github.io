@@ -2,4 +2,16 @@
   a:hover {
     text-decoration: none;
   }
+  .nav-tabs-mobile {
+    display: none;
+  }
+
+  @media(max-width: 750px) {
+    .nav-tabs-desktop {
+      display: none;
+    }
+    .nav-tabs-mobile {
+      display: inline-flex;
+    }
+  }
 }

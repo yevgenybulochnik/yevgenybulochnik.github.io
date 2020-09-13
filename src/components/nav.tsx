@@ -1,5 +1,12 @@
 import React from 'react'
-import { Navbar, Button, IconName } from '@blueprintjs/core'
+import {
+  Navbar,
+  Button,
+  IconName,
+  Menu,
+  MenuItem,
+  Popover,
+} from '@blueprintjs/core'
 import { Link } from '@reach/router'
 import './nav.scss'
 
@@ -28,12 +35,25 @@ const Nav: React.FC<Props> = (props) => {
         <Heading><strong>{branding}</strong></Heading>
         <Divider/>
       </Group>
-      <Group>
+      <Group className='nav-tabs-desktop'>
         {config.map((link, i) =>
           <Link key={i} to={link.to}>
             <Button className='bp3-minimal' icon={link.icon}>{link.name}</Button>
           </Link>
         )}
+      </Group>
+      <Group className='nav-tabs-mobile' align='right'>
+        <Popover
+          content={
+            <Menu>
+              {config.map((link, i) =>
+                <MenuItem key={i} text={link.name} icon={link.icon} href={link.to}/>
+              )}
+            </Menu>
+          }
+        >
+          <Button>Menu</Button>
+        </Popover>
       </Group>
     </Navbar>
   )

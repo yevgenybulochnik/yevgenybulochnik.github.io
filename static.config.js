@@ -8,7 +8,11 @@ import hljs from 'highlight.js'
 // Typescript support in static.config.js is not yet supported, but is coming in a future update!
 
 let areRoutesBuilt = false
-chokidar.watch('src/content').on('all', () => areRoutesBuilt && rebuildRoutes())
+
+if (process.env.NODE_ENV === 'development') {
+  chokidar.watch('src/content').on('all', () => areRoutesBuilt && rebuildRoutes())
+
+}
 
 export default {
   devServer: {

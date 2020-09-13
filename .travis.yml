@@ -4,8 +4,9 @@ language: node_js
 node_js:
   - "stable"
 env:
-  - NODE_ENV=prod
+  - NODE_ENV=production
 script:
+  - yarn install --prod=false
   - yarn build
 deploy:
   provider: pages

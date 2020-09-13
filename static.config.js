@@ -11,7 +11,6 @@ let areRoutesBuilt = false
 
 if (process.env.NODE_ENV === 'development') {
   chokidar.watch('src/content').on('all', () => areRoutesBuilt && rebuildRoutes())
-
 }
 
 export default {

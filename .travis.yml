@@ -5,9 +5,12 @@ node_js:
   - "stable"
 env:
   - NODE_ENV=production
-script:
+install:
   - yarn install --prod=false
+script:
   - yarn build
+after_sucess:
+  - touch dist/.nojekyll
 deploy:
   provider: pages
   skip_cleanup: true

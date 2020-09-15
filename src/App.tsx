@@ -22,7 +22,7 @@ function App() {
         branding="Yevgeny Bulochnik"
         config={[
           {to: '/', name: 'Home', icon: 'home'},
-          {to: '/about', name: 'about', icon: 'person'},
+          {to: '/about', name: 'About', icon: 'person'},
           {to: '/articles', name: 'Articles', icon: 'applications'},
           {to: '/projects', name: 'Projects', icon: 'application'},
         ]}

@@ -1,9 +1,15 @@
 @import 'src/vars.scss';
 
 .nav {
+  box-shadow: none !important;
   a:hover {
     text-decoration: none;
   }
+
+  .nav-button-mobile {
+    box-shadow: none !important;
+  }
+
   .nav-tabs-desktop {
     display: none;
   }

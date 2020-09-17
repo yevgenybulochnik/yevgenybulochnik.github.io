@@ -52,7 +52,7 @@ const Nav: React.FC<Props> = (props) => {
             </Menu>
           }
         >
-          <Button>Menu</Button>
+          <Button className='nav-button-mobile'>Menu</Button>
         </Popover>
       </Group>
     </Navbar>

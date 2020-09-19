@@ -31,6 +31,13 @@ export default {
     let { articles, projects } = props
     return [
       {
+        path: '/',
+        getData: () => ({
+          articles,
+          projects,
+        })
+      },
+      {
         path: '/articles',
         template: 'src/pages/articles.tsx',
         getData: () => ({

@@ -1,21 +1,18 @@
 import React from 'react'
 import { useRouteData } from 'react-static'
-import { Link } from '@reach/router'
-// import { Post } from 'types'
-
+import WorksList from 'components/workslist'
 
 export default () => {
   const { projects }= useRouteData()
 
   return (
     <div>
-      <ul>
-        {projects.map((projects: any, i: number) => (
-          <li key={i}>
-            <Link to={`/projects/${projects.slug}`}>{projects.slug}</Link>
-          </li>
-        ))}
-      </ul>
+      <h2 style={{marginLeft: '1em'}}>Projects</h2>
+      <WorksList
+        title=''
+        works={projects}
+        rootPath='/projects'
+      />
     </div>
   )
 }

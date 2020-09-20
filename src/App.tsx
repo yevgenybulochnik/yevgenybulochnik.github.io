@@ -28,7 +28,7 @@ function App() {
         ]}
       />
       <div className="content">
-        <React.Suspense fallback={<em>Loading...</em>}>
+        <React.Suspense fallback={<div />}>
           <Router>
             <Routes path="*" />
           </Router>

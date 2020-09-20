@@ -1,0 +1,10 @@
+@import 'src/vars.scss';
+
+.about {
+  margin: 2em;
+  font-size: 19px;
+
+  @include respond-to(tablet) {
+    margin: 2em 10%;
+  }
+}

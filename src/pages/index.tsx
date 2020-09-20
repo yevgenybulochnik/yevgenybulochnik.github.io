@@ -31,10 +31,10 @@ export default () => {
           It is exciting and empowering to be a clinician with patient care experience, while also having programming knowledge.
         </p>
         <p>
-          Can you think of the last time you spoke to a local pharmacist or primary care doctor about <a href='https://kubernetes.io/'>Kubernetes</a> or the newest javascript framework to pop up? Whether its <a href='https://reactjs.org/'>React</a> for fontend development, <a href='https://www.ansible.com/'>Ansible</a> for devops or data manipluation with python <a href='https://pandas.pydata.org/'>Pandas</a>, I am engaged!
+          Can you think of the last time you spoke to a local pharmacist or primary care doctor about <a href='https://kubernetes.io/'>Kubernetes</a> or the newest javascript framework to pop up? Whether its <a href='https://reactjs.org/'>React</a> for frontend development, <a href='https://www.ansible.com/'>Ansible</a> for devops or data manipulation with python <a href='https://pandas.pydata.org/'>Pandas</a>, I am engaged!
         </p>
         <p>
-          I believe having clinicans who understand the development cycle, who understand how developers approach problems and can actively contribute to a codebase are extremely valuable.
+          I believe having clinicians who understand the development cycle, who understand how developers approach problems and can actively contribute to a codebase are extremely valuable.
         </p>
       </div>
       <div className="home-content">

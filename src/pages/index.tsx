@@ -39,8 +39,8 @@ export default () => {
       </div>
       <div className="home-content">
         <h2>Recent Work</h2>
-        <WorksList title="Projects" works={projects} />
-        <WorksList title="Articles" works={articles} />
+        <WorksList title="Projects" works={projects} rootPath='/projects' />
+        <WorksList title="Articles" works={articles} rootPath='/articles' />
       </div>
     </div>
   )

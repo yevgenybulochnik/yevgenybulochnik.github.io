@@ -1,16 +1,19 @@
 import React from 'react'
 import { Card, Tag } from '@blueprintjs/core'
+import { navigate } from '@reach/router'
 import './workslist.scss'
 
 interface Props {
   title: string;
   works: any[];
+  rootPath: string;
 }
 
 const WorksList: React.FC<Props> = (props) => {
   const {
    title,
    works,
+   rootPath,
   } = props
 
   return (
@@ -22,7 +25,11 @@ const WorksList: React.FC<Props> = (props) => {
           </div>
       }
       {works.map((work, i) => (
-        <Card className='work-card' key={i} interactive>
+        <Card
+          className='work-card'
+          key={i}
+          interactive onClick={() => navigate(`${rootPath}/${work.slug}`)}
+        >
           <div className='card-content'>
             { work.img &&
               <div className='card-image'>

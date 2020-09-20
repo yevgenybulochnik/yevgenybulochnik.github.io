@@ -31,14 +31,6 @@ export default {
 
     let { articles, projects } = props
 
-    if (!articles) {
-      articles = []
-    }
-
-    if (!projects) {
-      projects = []
-    }
-
     return [
       {
         path: '/',

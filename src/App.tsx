@@ -2,7 +2,7 @@ import React from 'react'
 import { Root, Routes, addPrefetchExcludes } from 'react-static'
 import { Router } from '@reach/router'
 import { FocusStyleManager } from '@blueprintjs/core'
-import Nav from './components/nav'
+import Nav from 'components/nav'
 
 import './app.scss'
 import "normalize.css"

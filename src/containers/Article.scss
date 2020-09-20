@@ -1,7 +1,9 @@
+@import 'src/vars.scss';
+
 .article {
-  pre {
-    padding: 1em;
-    background-color: #f8f8f8;
-    border-radius: 1em;
+  margin: 2em;
+
+  @include respond-to(tablet) {
+    margin: 2em 10%;
   }
 }

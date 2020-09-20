@@ -1,2 +1,9 @@
+@import 'src/vars.scss';
+
 .project {
+  margin: 2em;
+
+  @include respond-to(tablet) {
+    margin: 2em 10%;
+  }
 }

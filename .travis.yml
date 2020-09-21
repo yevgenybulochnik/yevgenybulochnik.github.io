@@ -11,6 +11,8 @@ script:
   - yarn build
 after_sucess:
   - touch dist/.nojekyll
+  - touch dist/CNAME
+  - echo "yevgenybulochnik.com" > dist/CNAME
 deploy:
   provider: pages
   skip_cleanup: true

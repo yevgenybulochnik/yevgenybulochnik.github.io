@@ -4,7 +4,24 @@
   margin: 2em;
   font-size: 19px;
 
+  img {
+    max-width: 100%;
+    border-radius: 5px;
+  }
+
   @include respond-to(tablet) {
     margin: 2em 10%;
+
+    .campfire-image {
+      width: 20em;
+      margin: 0 1em 0 0;
+      float: left;
+    }
+
+    .climbing-image {
+      width: 20em;
+      margin: 0 0 1em 1em;
+      float: right;
+    }
   }
 }

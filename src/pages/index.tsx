@@ -8,8 +8,6 @@ import WorksList from 'components/workslist'
 export default () => {
 
   const { articles, projects } = useRouteData()
-  console.log(articles)
-  console.log(projects)
 
   return (
     <div className='home'>
@@ -22,7 +20,7 @@ export default () => {
         <Headshot
           name='Yevgeny (Eugene) Bulochnik'
           credentials='PharmD 340B ACE CACP'
-          src='https://avatars0.githubusercontent.com/u/12432798?s=460&u=38bd314c0d984f572f817ed291d57a81eea2e3d3&v=4'
+          src='https://assets.yevgenybulochnik.com/headshot.jpeg'
           height='300px'
         />
       </div>

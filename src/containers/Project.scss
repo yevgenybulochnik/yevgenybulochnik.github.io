@@ -10,6 +10,20 @@
     border-radius: 5px;
     overflow: auto;
   }
+  
+  table {
+    border: solid 1px lightgrey;
+    margin: 0 auto 1em auto;
+  }
+
+  table, th, td {
+    border: solid 1px lightgrey;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 5px;
+  }
 
   @include respond-to(tablet) {
     margin: 2em 10%;

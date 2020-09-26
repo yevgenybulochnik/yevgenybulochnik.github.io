@@ -1,1 +1,0 @@
-{"template":"__react_static_root__/src/pages/articles.tsx","sharedHashesByProp":{},"data":{"articles":[{"title":"First Article!","slug":"first-article","desc":"This is my first article post for the site!","contents":"<h1 id=\"first-article\">First Article</h1>\n<p>This is my very first article! More content to come!</p>\n"}]},"path":"articles"}

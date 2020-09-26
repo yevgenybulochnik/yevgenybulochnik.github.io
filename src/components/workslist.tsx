@@ -44,8 +44,8 @@ const WorksList: React.FC<Props> = (props) => {
                 {work.desc}
               </p>
               {work.tags &&
-                work.tags.map((tag: string) => (
-                  <Tag minimal intent='primary' className='tag'>{tag}</Tag>
+                work.tags.map((tag: string, i: number) => (
+                  <Tag key={i} minimal intent='primary' className='tag'>{tag}</Tag>
                 ))
               }
             </div>

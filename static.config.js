@@ -40,32 +40,24 @@ export default {
         })
       },
       {
-        path: '/articles',
-        template: 'src/pages/articles.tsx',
+        path: '/programming',
+        template: 'src/pages/programming',
         getData: () => ({
-          articles
+          articles,
+          projects
         }),
-        children: articles.map(article => ({
-          path: `/${article.slug}`,
-          template: 'src/containers/Article',
-          getData: () => ({
-            article,
-          })
-        }))
-      },
-      {
-        path: '/projects',
-        template: 'src/pages/projects.tsx',
-        getData: () => ({
-          projects,
-        }),
-        children: projects.map(project => ({
-          path: `/${project.slug}`,
-          template: 'src/containers/Project',
-          getData: () => ({
-            project,
-          })
-        }))
+        children: [
+          ...articles.map(article => ({
+            path: `/articles/${article.slug}`,
+            template: 'src/containers/Post',
+            getData: () => article,
+          })),
+          ...projects.map(project => ({
+            path: `/projects/${project.slug}`,
+            template: 'src/containers/Post',
+            getData: () => project,
+          }))
+        ]
       },
     ]
   },

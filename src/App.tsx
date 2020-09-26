@@ -23,8 +23,7 @@ function App() {
         config={[
           {to: '/', name: 'Home', icon: 'home'},
           {to: '/about', name: 'About', icon: 'person'},
-          {to: '/articles', name: 'Articles', icon: 'applications'},
-          {to: '/projects', name: 'Projects', icon: 'application'},
+          {to: '/programming', name: 'Programming', icon: 'applications'}
         ]}
       />
       <div className="content">

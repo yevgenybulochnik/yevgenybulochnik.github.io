@@ -1,13 +1,13 @@
 import React from 'react'
 import { useRouteData } from 'react-static'
 import convert from 'htmr'
-import './Project.scss'
+import './Post.scss'
 
 export default () => {
-  const { project } = useRouteData()
+  const data = useRouteData()
   return (
-    <div className='project'>
-      {convert(project.contents)}
+    <div className='post'>
+      {convert(data.contents)}
     </div>
   )
 }

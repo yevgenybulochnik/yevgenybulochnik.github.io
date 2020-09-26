@@ -1,6 +1,6 @@
 @import 'src/vars.scss';
 
-.project {
+.post {
   margin: 2em;
 
   pre {
@@ -10,7 +10,7 @@
     border-radius: 5px;
     overflow: auto;
   }
-  
+
   table {
     border: solid 1px lightgrey;
     margin: 0 auto 1em auto;

@@ -81,7 +81,7 @@ The next step was to make this data easily consumable. I decided to use [Flask](
 
 | Endpoint          | Method | Query Params                                                                |
 | ---               | ---    | ---                                                                         |
-| /records          | Get    | states, hrsa_designations, years, findings_keywords, entity_keywords, tags |
+| /records          | Get    | states, hrsa_designations, years, findings_keywords, entity_keywords, tags  |
 | /filteritems      | Get    | None                                                                        |
 | /summary          | Get    | states, hrsa_designations                                                   |
 | /summary/findings | Get    | states, hrsa_designations, years                                            |

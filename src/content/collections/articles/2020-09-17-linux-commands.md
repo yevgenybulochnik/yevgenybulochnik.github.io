@@ -9,7 +9,14 @@ This article serves as a living document for various Linux commands. It is conti
 
 - Get count of files in a directory
 ```bash
-ls | wc -l    # (--lines)
-ls -a | wc -l # Include hidden files (--all, --lines)
-ls -A | wc -l # Include hidden files but ignore . and .. (--almost-all, --lines)
+ls | wc -l      # --lines
+ls -a | wc -l   # Include hidden files (--all, --lines)
+ls -A | wc -l   # Include hidden files but ignore . and .. (--almost-all, --lines)
+```
+
+- Get count of specific file type in a directory
+```bash
+ls | grep '.html' | wc -l
+find -name '*.html' | wc -l
+find . -maxdepth 1 -name '*.html' | wc -l
 ```

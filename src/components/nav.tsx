@@ -44,6 +44,7 @@ const Nav: React.FC<Props> = (props) => {
       </Group>
       <Group className='nav-tabs-mobile' align='right'>
         <Popover
+          position='bottom'
           content={
             <Menu>
               {config.map((link, i) =>

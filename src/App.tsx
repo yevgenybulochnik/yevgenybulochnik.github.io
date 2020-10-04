@@ -1,7 +1,7 @@
 import React from 'react'
 import { Root, Routes, addPrefetchExcludes } from 'react-static'
 import { Router } from '@reach/router'
-import { FocusStyleManager } from '@blueprintjs/core'
+import { FocusStyleManager, Button } from '@blueprintjs/core'
 import Nav from 'components/nav'
 
 import './app.scss'
@@ -18,6 +18,7 @@ FocusStyleManager.onlyShowFocusOnTabs()
 function App() {
   return (
     <Root>
+      <div className="page-container">
       <Nav
         branding="Yevgeny Bulochnik"
         config={[
@@ -29,10 +30,26 @@ function App() {
       <div className="content">
         <React.Suspense fallback={<div />}>
           <Router>
-            <Routes path="*" />
+          <Routes path="*" />
           </Router>
         </React.Suspense>
       </div>
+      <footer>
+        <div className="icon-tray">
+          <Button minimal>
+            <a href="https://github.com/yevgenybulochnik">Github</a>
+          </Button>
+          <Button minimal>
+            <a href="https://linkedin.com/in/yevgeny-eugene-bulochnik-b429a6155">
+              LinkedIn
+            </a>
+          </Button>
+          <Button minimal disabled>
+            Contact Me
+          </Button>
+        </div>
+      </footer>
+     </div>
     </Root>
   )
 }

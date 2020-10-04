@@ -30,7 +30,7 @@ const Nav: React.FC<Props> = (props) => {
   } = props
 
   return (
-    <Navbar className='nav'>
+    <Navbar className='nav' fixedToTop>
       <Group>
         <Heading><strong>{branding}</strong></Heading>
         <Divider/>

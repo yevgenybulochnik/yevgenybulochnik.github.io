@@ -1,18 +1,28 @@
 ---
 title: Linux Commands
-slug: linux-commands 
+slug: linux-commands
 desc: Living document that serves as a reference for various linux commands
+published: 9-17-2020
+updated: 10-05-2020
+tags:
+    - Linux
+    - Devops
 ---
 # Linux Commands Reference
 
-This article serves as a living document for various Linux commands. It is continuously updated and serves as a reference document for various commands I may use frequently or infrequently! Flag definitions will be included in parentheses.
+This article serves as a living document for various Linux commands. It is continuously updated and will be used as a reference document for various commands I may use frequently or infrequently! Flag definitions will be included as needed.
 
 - Get count of files in a directory
 ```bash
-ls | wc -l      # --lines
-ls -a | wc -l   # Include hidden files (--all, --lines)
-ls -A | wc -l   # Include hidden files but ignore . and .. (--almost-all, --lines)
+ls | wc -l
+ls -a | wc -l
+ls -A | wc -l
 ```
+    - Flags
+        - -a, --all
+        - -A, --almost-all
+        - -l, --lines
+
 
 - Get count of specific file type in a directory
 ```bash

@@ -1,0 +1,14 @@
+{
+  "name": "mailer",
+  "version": "1.0.0",
+  "description": "Serverless contact mail setup for static site",
+  "main": "handler.js",
+  "author": "Yevgeny Bulochnik",
+  "devDependencies": {
+    "serverless-dotenv-plugin": "^3.0.0",
+    "serverless-offline": "^6.8.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.769.0"
+  }
+}

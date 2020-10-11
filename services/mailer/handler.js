@@ -66,10 +66,12 @@ function sendEmail(formData) {
   return ses.sendEmail(params).promise()
 }
 
-module.exports.mailer = async (event, context) => {
+module.exports.mailer = async (event) => {
   try {
     const formData = validateData(event.body)
     await sendEmail(formData)
+    console.log('==Success==')
+    console.log(event.requestContext.identity.sourceIp, event.requestContext.identity.userAgent)
     return generateResponse(200, 'Success!')
   } catch(err) {
     console.log(event.requestContext.identity.sourceIp, event.requestContext.identity.userAgent)

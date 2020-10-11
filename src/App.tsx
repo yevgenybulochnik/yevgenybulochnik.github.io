@@ -44,8 +44,8 @@ function App() {
               LinkedIn
             </a>
           </Button>
-          <Button minimal disabled>
-            Contact Me
+          <Button minimal>
+            <a href="/contact">Contact</a>
           </Button>
         </div>
       </footer>

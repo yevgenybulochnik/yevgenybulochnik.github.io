@@ -16,7 +16,7 @@ function generateResponse(code, payload) {
   return {
     statusCode: code,
     headers: {
-      'Accces-Control-Allow-Origin': CORS_DOMAIN
+      'Access-Control-Allow-Origin': CORS_DOMAIN
     },
     body: JSON.stringify(payload)
   }

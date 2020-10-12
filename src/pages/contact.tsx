@@ -61,7 +61,7 @@ export default () => {
       <p>
         Feel free to reach out! I'm excited about opportunities to connect and collaborate. I offer free initial healthcare tech and 340B consultations.
       </p>
-      <form onSubmit={() => console.log('test')} action='https://google.com'>
+      <form onSubmit={() => console.log('test')}>
         <FormGroup
           helperText='Enter your full name'
           label="Name"

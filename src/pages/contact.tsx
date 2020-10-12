@@ -7,7 +7,7 @@ import {
   Button,
 } from '@blueprintjs/core'
 import { useFormFields } from 'src/hooks'
-import { AppToaster } from 'src/components/apptoaster'
+// import { AppToaster } from 'src/components/apptoaster'
 
 interface InputFieldProps {
   name: string;
@@ -45,18 +45,18 @@ export default () => {
           throw Error()
         }
       })
-      AppToaster.show({
-        message: 'Your message has been sent!',
-        intent: 'primary',
-        icon: 'envelope',
-      })
+      // AppToaster.show({
+      //   message: 'Your message has been sent!',
+      //   intent: 'primary',
+      //   icon: 'envelope',
+      // })
       resetFields()
     } catch(e) {
-      AppToaster.show({
-        message: 'An error has occured sending this email',
-        intent: 'danger',
-        icon: 'warning-sign',
-      })
+      // AppToaster.show({
+      //   message: 'An error has occured sending this email',
+      //   intent: 'danger',
+      //   icon: 'warning-sign',
+      // })
     }
   }
 

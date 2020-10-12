@@ -5,15 +5,8 @@ import {
   InputGroup,
   TextArea,
   Button,
-  Toaster,
-  Position,
 } from '@blueprintjs/core'
 import { useFormFields } from 'src/hooks'
-
-const ContactToaster = Toaster.create({
-  className: 'contact-toaster',
-  position: Position.TOP_RIGHT,
-})
 
 interface InputFieldProps {
   name: string;
@@ -51,18 +44,10 @@ export default () => {
           throw Error()
         }
       })
-      ContactToaster.show({
-        message: 'Your message has been sent!',
-        intent: 'primary',
-        icon: 'envelope',
-      })
+      console.log('Success')
       resetFields()
     } catch(e) {
-      ContactToaster.show({
-        message: 'An error has occured sending this email',
-        intent: 'danger',
-        icon: 'warning-sign',
-      })
+      console.log('An error has occured')
     }
   }
 

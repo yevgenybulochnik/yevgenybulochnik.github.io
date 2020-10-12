@@ -5,9 +5,15 @@ import {
   InputGroup,
   TextArea,
   Button,
+  Toaster,
+  Position,
 } from '@blueprintjs/core'
 import { useFormFields } from 'src/hooks'
-// import { AppToaster } from 'src/components/apptoaster'
+
+const ContactToaster = Toaster.create({
+  className: 'contact-toaster',
+  position: Position.TOP_RIGHT,
+})
 
 interface InputFieldProps {
   name: string;
@@ -24,41 +30,41 @@ export default () => {
     password: "",
   })
 
-  // async function handleSubmit() {
-  //   event.preventDefault()
-  //   const formData = JSON.stringify({
-  //     name: fields.name,
-  //     email: fields.email,
-  //     message: fields.message,
-  //     password: fields.password,
-  //   })
+  async function handleSubmit() {
+    event.preventDefault()
+    const formData = JSON.stringify({
+      name: fields.name,
+      email: fields.email,
+      message: fields.message,
+      password: fields.password,
+    })
 
-  //   try {
-  //     await fetch(' https://rx9q9o2l18.execute-api.us-west-2.amazonaws.com/dev/mailer', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: formData,
-  //     }).then(res => {
-  //       if(!res.ok) {
-  //         throw Error()
-  //       }
-  //     })
-  //     // AppToaster.show({
-  //     //   message: 'Your message has been sent!',
-  //     //   intent: 'primary',
-  //     //   icon: 'envelope',
-  //     // })
-  //     resetFields()
-  //   } catch(e) {
-  //     // AppToaster.show({
-  //     //   message: 'An error has occured sending this email',
-  //     //   intent: 'danger',
-  //     //   icon: 'warning-sign',
-  //     // })
-  //   }
-  // }
+    try {
+      await fetch(' https://rx9q9o2l18.execute-api.us-west-2.amazonaws.com/dev/mailer', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: formData,
+      }).then(res => {
+        if(!res.ok) {
+          throw Error()
+        }
+      })
+      ContactToaster.show({
+        message: 'Your message has been sent!',
+        intent: 'primary',
+        icon: 'envelope',
+      })
+      resetFields()
+    } catch(e) {
+      ContactToaster.show({
+        message: 'An error has occured sending this email',
+        intent: 'danger',
+        icon: 'warning-sign',
+      })
+    }
+  }
 
   function validateInputs(): boolean {
     return fields.name.length > 0 && fields.email.length > 0 && fields.message.length > 0

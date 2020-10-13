@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './contact.scss'
 import {
   FormGroup,
   InputGroup,
   TextArea,
   Button,
+  Popover,
+  Icon,
 } from '@blueprintjs/core'
 import { useFormFields } from 'src/hooks'
 
@@ -16,6 +18,8 @@ interface InputFieldProps {
 }
 
 export default () => {
+  const [popoverIsOpen, setPopoverOpen] = useState(false)
+  const [popoverMessage, setPopoverMessage] = useState('')
   const [fields, handleFieldChange, resetFields] = useFormFields<InputFieldProps>({
     name: "",
     email: "",
@@ -45,9 +49,13 @@ export default () => {
         }
       })
       console.log('Success')
+      setPopoverMessage('Success, your message was sent!')
+      setPopoverOpen(true)
       resetFields()
     } catch(e) {
       console.log('An error has occured')
+      setPopoverMessage('An error has occured please try again later')
+      setPopoverOpen(true)
     }
   }
 
@@ -101,13 +109,24 @@ export default () => {
             onChange={handleFieldChange}
           />
         </FormGroup>
-        <Button
-          type='submit'
+        <Popover
           fill
-          disabled={!validateInputs()}
+          isOpen={popoverIsOpen}
+          onClose={() => setPopoverOpen(false)}
         >
-          Send
-        </Button>
+          <Button
+            type='submit'
+            fill
+            disabled={!validateInputs()}
+          >
+            Send
+          </Button>
+          <div style={{padding: '1em'}}>
+            <span>
+              <Icon icon='envelope' color='#5c7080'/> {popoverMessage}
+            </span>
+          </div>
+        </Popover>
         <input
           className='password'
           type='text'

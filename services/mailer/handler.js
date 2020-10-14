@@ -31,6 +31,7 @@ function validateData(data) {
   } = JSON.parse(data)
 
   if (!name || !email || !message) {
+    console.log('==Missing_Params==')
     throw new Error('Missing params')
   }
 

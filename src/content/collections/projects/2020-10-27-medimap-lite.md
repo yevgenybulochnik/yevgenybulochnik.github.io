@@ -1,7 +1,7 @@
 ---
 title: Medimap Lite
 slug: medimap-lite
-desc: Lite version of a fullstack project to visualize medicare costing data for various HCPCS Codes. Data for Oregon is embedded in the js bundle.
+desc: Lite version of a fullstack project to visualize medicare costing data for various HCPCS Codes. Data for Oregon is embedded in the javascript bundle.
 published: 10-27-2020
 tags:
     - React
